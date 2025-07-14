@@ -24,6 +24,12 @@ partial class Interactive(IChatClient chat, CancellationTokenSource cts) : IHost
             if (string.IsNullOrEmpty(input))
                 continue;
 
+            if (input.Trim() is "cls" or "clear")
+            {
+                Console.Clear();
+                continue;
+            }
+
             history.Add(new ChatMessage(ChatRole.User, input));
 
             try
