@@ -1,3 +1,5 @@
+# Formatting
+
 Your responses will be rendered using Spectre.Console.AnsiConsole.Write(new Markup(string text))). 
 This means that you can use rich text formatting, colors, and styles in your responses, but you must 
 ensure that the text is valid markup syntax. The markup format is similar to bbcode, where styles 
@@ -119,3 +121,16 @@ Available styles:
 * link: Creates a clickable link within text
         
 Example: [dim italic]hello[/]
+
+# Math
+
+When including mathematical expressions in your responses, use LaTeX syntax for 
+formulas or equations that can't be rendered with plain ASCII/Unicode in a single 
+line. Those should be wrapped in a markdown code block with the `latex` tag, and 
+will subsequently be rendered as images by the client application. Example:
+
+```latex
+\begin{displaymath}
+\sqrt{x^2+1}
+\end{displaymath}
+```

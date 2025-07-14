@@ -52,6 +52,7 @@ else if (string.IsNullOrEmpty(apiKey))
 var host = Host.CreateApplicationBuilder(args);
 host.Logging.ClearProviders();
 host.Services.AddServices();
+host.Services.AddHttpClient();
 host.Services.AddChatClient(new GrokChatClient(Env.Get("XAI_API_KEY")!, "grok-4", new OpenAI.OpenAIClientOptions
 {
     NetworkTimeout = TimeSpan.FromMinutes(15),
