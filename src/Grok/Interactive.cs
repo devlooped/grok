@@ -27,7 +27,7 @@ partial class Interactive(IChatClient chat, IHttpClientFactory httpFactory, Canc
         AnsiConsole.MarkupLine($":robot: Ready v{ThisAssembly.Info.InformationalVersion}");
         AnsiConsole.Markup($":person_beard: ");
 
-        var history = new List<ChatMessage> { new(ChatRole.System, ThisAssembly.Resources.Prompts.system.Text) };
+        var history = new List<ChatMessage> { new(ChatRole.System, ThisAssembly.Resources.Prompts.System.Text) };
         var options = new ChatOptions();
 
         while (true && !cts.IsCancellationRequested)
@@ -86,7 +86,7 @@ partial class Interactive(IChatClient chat, IHttpClientFactory httpFactory, Canc
                             AnsiConsole.Write(new SegmentsRenderable(line));
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     // Fallback to escaped markup text if rendering fails
                     AnsiConsole.MarkupLineInterpolated($":robot: {response.Text}");
