@@ -29,11 +29,7 @@
     <PackageReference Include="Humanizer.Core" Version="2.14.1" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.10" />
     <PackageReference Include="Smith" Version="0.2.2" />
-    <PackageReference Include="ThisAssembly.AssemblyInfo" Version="2.0.14" PrivateAssets="all" />
-    <PackageReference Include="ThisAssembly.Git" Version="2.0.14" PrivateAssets="all" />
-    <PackageReference Include="ThisAssembly.Metadata" Version="2.0.14" PrivateAssets="all" />
-    <PackageReference Include="ThisAssembly.Project" Version="2.0.14" PrivateAssets="all" />
-    <PackageReference Include="ThisAssembly.Strings" Version="2.0.14" PrivateAssets="all" />
+    <PackageReference Include="ThisAssembly" Version="2.0.14" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +39,10 @@
     <ProjectProperty Include="PackageId" />
     <ProjectProperty Include="PackageVersion" />
     <ProjectProperty Include="SLEET_FEED_URL" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Prompts\*.md" Kind="Text" />
   </ItemGroup>
 
 </Project>
